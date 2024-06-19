@@ -33,8 +33,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun mealsNavigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "meals_list_screen") {
-        composable(route = "meals_list_screen") {
+    NavHost(navController = navController, startDestination = "book_list_screen") {
+        composable(route = "book_list_screen") {
            // val categoriesViewModel: BooksViewModel = viewModel()
             BooksListingScreen{ bookId ->
                 navController.navigate("book_detail_screen/$bookId")

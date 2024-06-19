@@ -1,5 +1,6 @@
 package com.muneera.books.ui.books
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.compose.runtime.*
 import androidx.lifecycle.MutableLiveData
@@ -93,11 +94,13 @@ class BooksViewModel @Inject constructor(
 
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun booksRetrieved(bookList: List<BookResponseItem>) {
         // dogsLoadError.value = false
         viewModelScope.launch(Dispatchers.Main) {
             booksState.value = bookList
             loading.value = false
+
             if (bookList.isEmpty())
             empty.value = true
         }

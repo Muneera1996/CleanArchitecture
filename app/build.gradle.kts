@@ -68,8 +68,8 @@ dependencies {
     implementation ("androidx.navigation:navigation-compose:2.7.7")
 
     //lifecycle
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.2")
 
     //retrofit
     implementation ("com.google.code.gson:gson:2.10.1")
@@ -98,9 +98,30 @@ dependencies {
     // Sqlcipher
     implementation ("net.zetetic:android-database-sqlcipher:4.5.0")
 
+
+    // Testing Room components
+    testImplementation ("androidx.room:room-testing:2.6.1")
+
+    // AndroidX Test
+    testImplementation ("androidx.test.ext:junit:1.1.5")
+    testImplementation ("androidx.test:core:1.5.0")
+    testImplementation ("androidx.test:runner:1.5.2")
+    testImplementation ("androidx.test.espresso:espresso-core:3.5.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+//    // Hilt testing dependencies
+//    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.40.5")
+//    kspAndroidTest ("com.google.dagger:hilt-android-compiler:2.40.5")
+//    testImplementation ("com.google.dagger:hilt-android-testing:2.40.5")
+
+    // Mockito
+    testImplementation ("org.mockito:mockito-core:3.12.4")
+    testImplementation ("org.mockito:mockito-inline:3.12.4")
+    androidTestImplementation ("org.mockito:mockito-android:3.12.4")
+
+
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")

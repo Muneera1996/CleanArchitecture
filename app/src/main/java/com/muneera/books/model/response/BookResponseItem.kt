@@ -20,17 +20,17 @@ data class BookResponseItem(
 
     @ColumnInfo(name = "description")
     @SerializedName("description")
-    val description: String?,
+    val description: String?=null,
 
     @ColumnInfo(name = "image")
     @SerializedName("image")
-    val image: String?,
+    val image: String?=null,
 
     @ColumnInfo(name = "release_date")
     @SerializedName("release_date")
-    val releaseDate: String?,
+    val releaseDate: String?=null,
 
     @ColumnInfo(name = "title")
     @SerializedName("title")
-    val title: String?
+    val title: String?=null
 )

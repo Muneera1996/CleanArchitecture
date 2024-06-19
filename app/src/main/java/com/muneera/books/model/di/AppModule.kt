@@ -9,6 +9,7 @@ import com.muneera.books.model.repository.BookRepository
 import com.muneera.books.model.repository.BooksRepositoryImpl
 import com.muneera.books.model.api.BooksApi
 import com.muneera.books.model.connectivity.NetworkConnectivityObserver
+import com.muneera.books.model.utils.Constants.BASE_URL
 import com.muneera.books.model.utils.RetryingInterceptor
 import com.muneera.books.model.utils.UserDatabasePassphrase
 import dagger.Module
@@ -47,7 +48,6 @@ object AppModule {
     fun provideDao(database: BookDatabase) = database.bookDao()
 
 
-    private const val BASE_URL =  "https://c27b2d72-8d9c-4aa0-b549-7ae7e5666815.mock.pstmn.io/"
 
     @Provides
     @Singleton

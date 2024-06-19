@@ -7,7 +7,6 @@ import com.muneera.books.model.response.BookResponseItem
 
 @Dao
 interface BookDao {
-
     @Insert
     suspend fun insertAll(vararg books: BookResponseItem): List<Long>
 
