@@ -112,7 +112,7 @@ fun BooksCategory(book: BookResponseItem, navigationCallback: (Int) -> Unit) {
                     Text(
                         text = book.description ?: "", style = MaterialTheme.typography.body2,
                         overflow = TextOverflow.Ellipsis,
-                        maxLines = if (isExpanded) 10 else 4
+                        maxLines = if (isExpanded) 10 else 2
                     )
                 }
             }
