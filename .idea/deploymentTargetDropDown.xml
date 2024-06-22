@@ -8,13 +8,16 @@
       <entry key="BookDaoTest">
         <State />
       </entry>
+      <entry key="BooksRepositoryImplTest">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>
-      <entry key="testProvideDao()">
+      <entry key="test_fetchFromDatabase()">
         <State />
       </entry>
-      <entry key="testProvideDatabase()">
+      <entry key="test_fetchFromRemote()">
         <State />
       </entry>
     </value>

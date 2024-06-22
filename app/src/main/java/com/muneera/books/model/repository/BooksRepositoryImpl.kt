@@ -1,14 +1,13 @@
 package com.muneera.books.model.repository
 
 import com.muneera.books.model.api.BooksApi
-import com.muneera.books.model.response.BookResponse
 import com.muneera.books.model.response.BookResponseItem
 
 class BooksRepositoryImpl(
     private val api : BooksApi
 ) : BookRepository {
-    private var cachedMeals = listOf<BookResponseItem>()
-    override suspend fun getBooks(): ApiResponse<BookResponse> {
+     var cachedMeals = listOf<BookResponseItem>()
+    override suspend fun getBooks(): ApiResponse<List<BookResponseItem>> {
         return try {
             ApiResponse.Loading // Emit loading state
             val response = api.getBooks()
@@ -29,8 +28,5 @@ class BooksRepositoryImpl(
 
     }
 
-    override fun getBook(id:Int) : BookResponseItem?{
-        return cachedMeals.firstOrNull { id==it.id }
-    }
 
 }

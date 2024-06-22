@@ -35,7 +35,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.muneera.books.model.response.BookResponseItem
 
@@ -44,14 +43,21 @@ fun BooksListingScreen(navigationCallback: (Int) -> Unit) {
     val categoriesViewModel: BooksViewModel = hiltViewModel()
 
     val books = categoriesViewModel.booksState.value
-    val error = categoriesViewModel.empty.value
+    val error = categoriesViewModel.error.value
+    val loading = categoriesViewModel.loading.value
 
-    if (error) {
-        CenteredText("No Data Found..")
-    } else {
-        LazyColumn(contentPadding = PaddingValues(16.dp)) {
-            items(books) {
-                BooksCategory(book = it, navigationCallback = navigationCallback)
+    when {
+        loading-> {
+            CenteredText("Loading...")
+        }
+        error!=null -> {
+            CenteredText("Error: $error")
+        }
+        books.isNotEmpty() -> {
+            LazyColumn(contentPadding = PaddingValues(16.dp)) {
+                items(books) {
+                    BooksCategory(book = it, navigationCallback = navigationCallback)
+                }
             }
         }
     }

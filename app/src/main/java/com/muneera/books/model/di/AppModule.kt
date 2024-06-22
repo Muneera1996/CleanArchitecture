@@ -8,7 +8,6 @@ import com.muneera.books.model.database.BookDatabase
 import com.muneera.books.model.repository.BookRepository
 import com.muneera.books.model.repository.BooksRepositoryImpl
 import com.muneera.books.model.api.BooksApi
-import com.muneera.books.model.connectivity.NetworkConnectivityObserver
 import com.muneera.books.model.utils.Constants.BASE_URL
 import com.muneera.books.model.utils.RetryingInterceptor
 import com.muneera.books.model.utils.UserDatabasePassphrase
@@ -79,11 +78,7 @@ object AppModule {
         return BooksRepositoryImpl(api)
     }
 
-    @Singleton
-    @Provides
-    fun provideNetworkConnectivityObserver(
-        @ApplicationContext context: Context
-    ) = NetworkConnectivityObserver(context = context)
+
 
     @Provides
     @Singleton

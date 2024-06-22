@@ -3,7 +3,6 @@ package com.muneera.books
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import com.muneera.books.model.api.BooksApi
-import com.muneera.books.model.connectivity.NetworkConnectivityObserver
 import com.muneera.books.model.database.BookDao
 import com.muneera.books.model.database.BookDatabase
 import com.muneera.books.model.di.AppModule

@@ -1,4 +1,6 @@
 package com.muneera.books.model.response
 
 
-class BookResponse : ArrayList<BookResponseItem>()
+//data class BookResponse(
+//    val books: List<BookResponseItem> = listOf()
+//)
