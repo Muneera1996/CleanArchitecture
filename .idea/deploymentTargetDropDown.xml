@@ -11,13 +11,13 @@
       <entry key="BooksRepositoryImplTest">
         <State />
       </entry>
+      <entry key="BooksViewModelTest">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>
-      <entry key="test_fetchFromDatabase()">
-        <State />
-      </entry>
-      <entry key="test_fetchFromRemote()">
+      <entry key="test_fetchFromRemote_success()">
         <State />
       </entry>
     </value>

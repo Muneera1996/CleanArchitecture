@@ -114,19 +114,14 @@ dependencies {
     androidTestImplementation ("androidx.arch.core:core-testing:2.2.0")
 
     //coroutine test
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 
-
-//    // Hilt testing dependencies
-//    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.40.5")
-//    kspAndroidTest ("com.google.dagger:hilt-android-compiler:2.40.5")
-//    testImplementation ("com.google.dagger:hilt-android-testing:2.40.5")
 
     // Mockito
-    testImplementation ("org.mockito:mockito-core:3.12.4")
+    testImplementation ("org.mockito:mockito-core:4.0.0")
     testImplementation ("org.mockito:mockito-inline:3.12.4")
     androidTestImplementation ("org.mockito:mockito-android:3.12.4")
-    testImplementation ("org.mockito.kotlin:mockito-kotlin:4.0.0")
+    androidTestImplementation ("org.mockito.kotlin:mockito-kotlin:4.0.0")
 
 
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))

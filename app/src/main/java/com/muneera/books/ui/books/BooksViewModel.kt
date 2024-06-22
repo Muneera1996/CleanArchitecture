@@ -14,6 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 
@@ -67,7 +68,9 @@ class BooksViewModel @Inject constructor(
                 Log.e("Exception", e.message.toString())
                 fetchFromDatabase(e.message)
             } finally {
-                loading.value = false
+                withContext(Dispatchers.Main) {
+                    loading.value = false
+                }
             }
         }
     }
@@ -95,7 +98,7 @@ class BooksViewModel @Inject constructor(
     suspend fun storeBooksLocally(list: List<BookResponseItem>) {
         bookDao.deleteAllBooks()
         val result = bookDao.insertAll(*list.toTypedArray())
-        booksRetrieved(list,null)
+        booksRetrieved(list,if (list.isEmpty()) "No Data Found" else null)
     }
 
 }
